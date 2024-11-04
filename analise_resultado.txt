@@ -1,0 +1,21 @@
+Com base nos dados apresentados: 
+
+Foram realizadas 412460 requisições.
+Destas 412380 foram realizadas com sucesso e 80 falharam.
+Status de erro retornados foram: 502 e 520
+
+99.98%  das requisições foram executadas com sucesso.
+95% tiveram o tempo de execução menor que 500ms
+
+Um dos erros obtido foi o "read: connection reset by peer"
+
+Por se tratar de um erro genérico temos algumas situações a avaliar: 
+
+1. A resposta da execução é muito grande e por conta disso a conexão é interrompida; 
+2. Problema na network do servidor (ou limitação), que faz com que a conexão seja interrompida em tempo X de execução; 
+3. Existe algum proxy no servidor que interrompe a conexão durante a execução; 
+4. Limitação de memória; 
+5. Consumo intenso da CPU; 
+
+Acredito que o site em si não está preparado para um número elevado de execuções e o mesmo precisou ser reiniciado. 
+Provavelmente por conta da situação 4 ou 5.
